@@ -8,6 +8,9 @@ The first line of input contains an integer T, denoting the number of test cases
 Output:
 
 For each test case, output the maximum possible difference between the weights carried by both in grams.*/
+
+/* Code*/
+
 import java.util.Scanner;
 import java.util.Arrays;
  
