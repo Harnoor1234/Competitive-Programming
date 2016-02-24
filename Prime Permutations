@@ -66,7 +66,7 @@ public class Main {
 	}
 	
 	
-	//FastScanner s = new FastScanner(new File("input.txt"));       copy inside void solve
+	//FastScanner s = new FastScanner(new File("input.txt"));       
     //PrintWriter ww = new PrintWriter(new FileWriter("output.txt"));
     static FastScanner in = new FastScanner();   
     static PrintWriter ww = new PrintWriter(new OutputStreamWriter(System.out));
