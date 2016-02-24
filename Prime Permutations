@@ -1,4 +1,5 @@
-/*A permutation of N distinct integers between 1 and N, both inclusive, is called a prime permutation of size N iff - for all i between 1 and N, the following condition holds:
+/*A permutation of N distinct integers between 1 and N, both inclusive, is called a prime permutation of size N iff - for all i 
+between 1 and N, the following condition holds:
 The ith integer is the Xth smallest integer in the first i integers, where X is either 1 or a prime number.
 Your task is to find out how many prime permutations are there of size N.
 Input
@@ -6,7 +7,8 @@ Input
 The first line contains a single integer T, denoting the number of test cases. Then T lines follow, each containing a single integer N.
 Output
 
-For each test case, output a single line containing the number of prime permutations of size N. Since the answers can be very large, output each answer modulo 1,000,000,007.*/
+For each test case, output a single line containing the number of prime permutations of size N. Since the answers can be very large, 
+output each answer modulo 1,000,000,007.*/
 
 /* Code*/
 import java.io.*;
