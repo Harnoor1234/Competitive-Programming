@@ -1,0 +1,136 @@
+import java.io.*;
+import java.util.*;
+ 
+ 
+public class Main {
+	
+	static class FastScanner{
+		BufferedReader s;
+		StringTokenizer st;
+		
+		
+		public FastScanner(){
+			st = new StringTokenizer("");
+			s = new BufferedReader(new InputStreamReader(System.in));
+		}
+		
+		public FastScanner(File f) throws FileNotFoundException{
+			st = new StringTokenizer("");
+			s = new BufferedReader (new FileReader(f));
+		}
+		
+		public int nextInt() throws IOException{
+			if(st.hasMoreTokens())
+				return Integer.parseInt(st.nextToken());
+			else{
+				st = new StringTokenizer(s.readLine());
+				return nextInt();
+			}
+		}
+		
+		public double nextDouble() throws IOException{
+			if(st.hasMoreTokens())
+				return Double.parseDouble(st.nextToken());
+			else{
+				st = new StringTokenizer(s.readLine());
+				return nextDouble();
+			}
+		}
+		
+		public long nextLong() throws IOException{
+			if(st.hasMoreTokens())
+				return Long.parseLong(st.nextToken());
+			else{
+				st = new StringTokenizer(s.readLine());
+				return nextLong();
+			}
+		}
+		
+		public String nextString() throws IOException{
+			if(st.hasMoreTokens())
+				return st.nextToken();
+			else{
+				st = new StringTokenizer(s.readLine());
+				return nextString();
+			}
+			
+		}
+		public String readLine() throws IOException{
+			return s.readLine();
+		}
+		
+		public void close() throws IOException{
+			s.close();
+		}
+		
+	}
+	
+	
+	//FastScanner s = new FastScanner(new File("input.txt"));       copy inside void solve
+    //PrintWriter ww = new PrintWriter(new FileWriter("output.txt"));
+    static FastScanner in = new FastScanner();   
+    static PrintWriter ww = new PrintWriter(new OutputStreamWriter(System.out));
+ 
+	
+	public static void main(String[] args)throws IOException{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		PrintWriter wr = new PrintWriter(System.out);
+		
+		
+		long m=1000000007;
+		int x= 5000000;
+		int []prime=new int[x+1];
+		prime[1]=1;
+		//Arrays.fill(prime, true);
+		for(int i=2;i<=Math.sqrt(x);i++){
+			if(prime[i]==0){
+				for(int j=i*i;j<=x;j+=i){
+					prime[j]=1;
+				}
+			}
+		}
+		long[] fre=new long[x+1];
+		fre[1]=1;
+		long count=1;
+		for(int i=1; i<=x;i++){
+			if(prime[i]==0){
+				count++;
+				fre[i]=count;
+				//System.out.prlong(fre[i]+" ");
+			}
+			else{
+				fre[i]=count;
+				//System.out.prlong(fre[i]+" ");
+			}
+		}
+		//System.out.prlongln();
+		long[] dp=new long[x+1];
+		dp[1]=1;
+		for(int i=2; i<=x; i++){
+			dp[i]=((dp[i-1]%m)*(fre[i]%m))%m;
+			//System.out.prlong(dp[i]+" ");
+		}
+		
+		
+		
+
+		
+		
+		int y;
+		int t = in.nextInt();
+		while(t-->0){
+			y=in.nextInt();
+			wr.println(dp[y]);
+		}
+		wr.flush();
+		wr.close();
+		
+		
+	}
+	public static int ip(String s){
+		return Integer.parseInt(s);
+	}
+	
+}
+ 
